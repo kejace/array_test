@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "blockapps-js": "git+https://github.com/kejace/blockapps-js.git"
+    "blockapps-js": "git+https://github.com/kejace/blockapps-js.git",
+    "underscore": "^1.8.3"
   }
 }
