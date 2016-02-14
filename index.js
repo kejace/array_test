@@ -9,15 +9,12 @@ var privkey = "e011bdbfde66bb78af76aaf907e6bbf2c5715d163524241ae50b5309b40da42d"
 var pub_address = "903b4a914940f08399e41dddcab8e1ea8939cbab";
 
 
-// contract lives here: http://strato-dev2.blockapps.net/eth/v1.0/account?address=d9ffec038375699cc76528f3b7fa5dd07e4ea4df
+    // contract lives here: http://strato-dev2.blockapps.net/eth/v1.0/account?address=d9ffec038375699cc76528f3b7fa5dd07e4ea4df
 
-//this works
+  contract.state["setPersonaAttributes"].apply(null,["000000001"]).txParams({
+    value : Units.ethValue(1000000000000).in("wei")
+    }).callFrom(privkey)
+    .then(function(r){console.log("afterTX: " + r)})
+    .catch(function (err) { console.log("err: " + err); 
+  });
 
-contract.state["setPersonaAttributes"].apply("000000001").txParams({
-value : Units.ethValue(1000000000000).in("wei")
-}).callFrom(privkey)
-.then(function(r){console.log("afterTX: " + r)})
-.catch(function (err) { console.log("err: " + err); 
-});
-
-// how to read state?
